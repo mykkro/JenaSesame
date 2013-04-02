@@ -4,7 +4,13 @@
 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.openjena</groupId>
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
+
+	<groupId>com.github.ansell.jenasesame</groupId>
 	<artifactId>jena-sesame-parent</artifactId>
 	<packaging>pom</packaging>
 	<name>JenaSesame</name>
@@ -18,17 +24,12 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	</modules>
 
 	<description>Jena API over a Sesame repository</description>
-	<url>http://openjena.org/ARQ</url>
-
-	<organization>
-		<name>Hewlett-Packard</name>
-		<url>http://www.hp.com/</url>
-	</organization>
+	<url>https://github.com/ansell/JenaSesame</url>
 
 	<licenses>
 		<license>
 			<name>BSD-style license</name>
-			<url>http://openjena.org/license.html</url>
+			<url>https://github.com/ansell/JenaSesame/blob/master/Copyright.txt</url>
 		</license>
 	</licenses>
 
@@ -42,31 +43,13 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<ver.jenasesame>0.1.1-SNAPSHOT</ver.jenasesame>
 		<ver.jena>2.7.3</ver.jena>
 		<ver.arq>2.9.3</ver.arq>
-		<ver.sesame>2.7.0-beta2</ver.sesame>
+		<ver.sesame>2.7.0-beta3-SNAPSHOT</ver.sesame>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
-
-			<dependency>
-				<groupId>org.openjena</groupId>
-				<artifactId>jena-sesame</artifactId>
-				<version>${ver.jenasesame}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.openjena</groupId>
-				<artifactId>sesame-jena</artifactId>
-				<version>${ver.jenasesame}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.openjena</groupId>
-				<artifactId>jena-sesame-common</artifactId>
-				<version>${ver.jenasesame}</version>
-			</dependency>
 
 			<!-- Jena and ARQ - including testing support -->
 
@@ -148,13 +131,13 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-api</artifactId>
-				<version>1.7.2</version>
+				<version>1.7.4</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-log4j12</artifactId>
-				<version>1.7.2</version>
+				<version>1.7.4</version>
 				<scope>test</scope>
 			</dependency>
 
@@ -174,7 +157,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.13</version>
+					<version>2.14</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -263,111 +246,6 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 				</plugin>
 			</plugins>
 		</pluginManagement>
-        <extensions>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-ssh</artifactId>
-                <version>2.3</version>
-            </extension>
-        </extensions>
 	</build>
 
-	<repositories>
-		<repository>
-			<id>apache-repo.releases</id>
-			<name>Apache Release Repository</name>
-			<url>https://repository.apache.org/content/repositories/releases/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-
-		<repository>
-			<id>Codehaus Snapshots</id>
-			<url>http://nexus.codehaus.org/snapshots/</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>Codehaus Snapshots</id>
-			<url>http://nexus.codehaus.org/snapshots/</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<releases>
-				<enabled>true</enabled>  <!-- Workaround for MNG-2974, see note below -->
-			</releases>
-		</pluginRepository>
-	</pluginRepositories>
-
-	<profiles>
-		<profile>
-			<id>metadatanet-deploy</id>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<distributionManagement>
-				<repository>
-					<id>maenad-releases</id>
-					<name>maenad-releases</name>
-					<url>http://maven.metadata.net/artifactory/libs-releases-local</url>
-				</repository>
-				<snapshotRepository>
-					<id>maenad-snapshots</id>
-					<name>maenad-snapshots</name>
-					<url>http://maven.metadata.net/artifactory/libs-snapshots-local</url>
-				</snapshotRepository>
-			</distributionManagement>
-		</profile>
-		<profile>
-			<id>openjena-deploy</id>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<distributionManagement>
-				<downloadUrl>http://openjena.org/repo-dev</downloadUrl>
-
-				<!-- In development - release to development repo -->
-
-				<repository>
-					<id>jena-repo</id>
-					<name>Jena repo</name>
-					<!--<url>sftp://openjena.org/var/repo</url> -->
-					<url>sftp://openjena.org/var/repo-dev</url>
-					<!--<url>file:tmp</url> -->
-					<layout>default</layout>
-				</repository>
-
-				<snapshotRepository>
-					<id>jena-repo-dev</id>
-					<name>Jena development repo</name>
-					<url>sftp://openjena.org/var/repo-dev</url>
-					<layout>default</layout>
-				</snapshotRepository>
-
-			</distributionManagement>
-		</profile>
-
-        <profile>
-            <id>krizik-deploy</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <distributionManagement>
-                <repository>
-                    <id>krizik-private</id>
-                    <url>scp://kremen@krizik.felk.cvut.cz/var/www/m2repo-private</url>
-                </repository>
-            </distributionManagement>
-        </profile>
-	</profiles>
 </project>

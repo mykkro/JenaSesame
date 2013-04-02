@@ -5,12 +5,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<artifactId>jena-sesame-parent</artifactId>
-		<groupId>org.openjena</groupId>
+		<groupId>com.github.ansell.jenasesame</groupId>
 		<version>0.1.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>jena-sesame-common</artifactId>
-	<name>jena-sesame-common</name>
-	<url>http://openjena.org/</url>
+	<name>JenaSesame :: Common Library</name>
 	<dependencies>
 		<dependency>
 			<groupId>org.openrdf.sesame</groupId>
