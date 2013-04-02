@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>jena-sesame-parent</artifactId>
 		<groupId>com.github.ansell.jenasesame</groupId>
-		<version>0.1.1-SNAPSHOT</version>
+		<version>0.2-SNAPSHOT</version>
 	</parent>
 	<artifactId>jena-sesame-common</artifactId>
 	<name>JenaSesame :: Common Library</name>
