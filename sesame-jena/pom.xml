@@ -4,15 +4,17 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.openjena</groupId>
+		<groupId>com.github.ansell.jenasesame</groupId>
 		<artifactId>jena-sesame-parent</artifactId>
-		<version>0.1.1-SNAPSHOT</version>
+		<version>0.2-SNAPSHOT</version>
 	</parent>
 	<artifactId>sesame-jena</artifactId>
+	<name>JenaSesame :: OpenRDF Sesame access to Jena Models</name>
 	<dependencies>
 		<dependency>
-			<groupId>org.openjena</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>jena-sesame-common</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.jena</groupId>
