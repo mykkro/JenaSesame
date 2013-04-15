@@ -41,8 +41,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 
 	<properties>
 		<ver.jenasesame>0.1.1-SNAPSHOT</ver.jenasesame>
-		<ver.jena>2.10.0</ver.jena>
-		<ver.arq>2.10.0</ver.arq>
+		<ver.jena>2.7.3</ver.jena>
+		<ver.arq>2.9.3</ver.arq>
 		<ver.sesame>2.7.0-beta3-SNAPSHOT</ver.sesame>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -131,13 +131,13 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-api</artifactId>
-				<version>1.7.4</version>
+				<version>1.7.5</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-log4j12</artifactId>
-				<version>1.7.4</version>
+				<version>1.7.5</version>
 				<scope>test</scope>
 			</dependency>
 
