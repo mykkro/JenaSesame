@@ -21,7 +21,7 @@ public class TestJS_Graph extends AbstractTestGraph
     {
         return TestJS_Graph.newGraph() ; 
     }
-    @Override public void testBulkAddWithReification() {}
+    public void testBulkAddWithReification() {}
     @Override public void testIsomorphismFile() {}
     
     // Meaning less - graphs (and hence models) are not indpenedent of their datasets. 

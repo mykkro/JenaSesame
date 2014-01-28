@@ -6,7 +6,7 @@
 
 package org.openjena.jenasesame.impl;
 
-import org.openjena.atlas.lib.Closeable ;
+import org.apache.jena.atlas.lib.Closeable;
 import org.openrdf.query.MalformedQueryException ;
 import org.openrdf.query.QueryEvaluationException ;
 import org.openrdf.query.QueryLanguage ;

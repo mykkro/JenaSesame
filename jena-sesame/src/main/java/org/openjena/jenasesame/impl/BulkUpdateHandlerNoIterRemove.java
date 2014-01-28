@@ -9,8 +9,6 @@ package org.openjena.jenasesame.impl;
 
 import java.util.List ;
 
-import org.openjena.atlas.iterator.Iter ;
-
 import com.hp.hpl.jena.graph.BulkUpdateHandler ;
 import com.hp.hpl.jena.graph.GraphEvents ;
 import com.hp.hpl.jena.graph.Node ;
@@ -18,6 +16,7 @@ import com.hp.hpl.jena.graph.Triple ;
 import com.hp.hpl.jena.graph.impl.GraphWithPerform ;
 import com.hp.hpl.jena.graph.impl.SimpleBulkUpdateHandler ;
 import com.hp.hpl.jena.util.iterator.ExtendedIterator ;
+import org.apache.jena.atlas.iterator.Iter;
 
 public class BulkUpdateHandlerNoIterRemove extends SimpleBulkUpdateHandler implements BulkUpdateHandler
 {
@@ -49,7 +48,7 @@ public class BulkUpdateHandlerNoIterRemove extends SimpleBulkUpdateHandler imple
     private void removeWorker(Node s, Node p, Node o)
     {
         ExtendedIterator<Triple> iter = super.graph.find(s, p, o) ;
-        List<Triple> x = Iter.toList(iter) ; 
+        List<Triple> x = Iter.toList(iter) ;
         iter.close() ;
         
         for ( Triple t : x )

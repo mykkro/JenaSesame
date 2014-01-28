@@ -4,12 +4,6 @@
 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.sonatype.oss</groupId>
-		<artifactId>oss-parent</artifactId>
-		<version>7</version>
-	</parent>
-
 	<groupId>com.github.ansell.jenasesame</groupId>
 	<artifactId>jena-sesame-parent</artifactId>
 	<packaging>pom</packaging>
@@ -41,9 +35,9 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 
 	<properties>
 		<ver.jenasesame>0.1.1-SNAPSHOT</ver.jenasesame>
-		<ver.jena>2.7.3</ver.jena>
-		<ver.arq>2.9.3</ver.arq>
-		<ver.sesame>2.7.0-beta3-SNAPSHOT</ver.sesame>
+		<ver.jena>2.11.0</ver.jena>
+		<ver.arq>2.11.0</ver.arq>
+		<ver.sesame>2.7.8</ver.sesame>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
@@ -221,7 +215,6 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 						<doctitle>${project.name} ${project.version}</doctitle>
 						<!-- include org.apache.jena.query,org.apache.jena.update,org.apache.jena.query.larq -->
 						<!-- Exclude the implementation -->
-						<includePackageNames>org.openjena.jenasesame,org.openjena.sesamejena</includePackageNames>
 						<bottom>Copyright © 2009 Talis Information Ltd</bottom>
 					</configuration>
 				</plugin>
@@ -247,5 +240,4 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 			</plugins>
 		</pluginManagement>
 	</build>
-
 </project>

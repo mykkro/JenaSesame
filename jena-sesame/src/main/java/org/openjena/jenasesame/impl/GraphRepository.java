@@ -6,6 +6,7 @@
 
 package org.openjena.jenasesame.impl;
 
+import com.hp.hpl.jena.graph.impl.GraphBase;
 import org.openjena.jenasesame.util.Convert;
 import org.openrdf.model.Resource ;
 import org.openrdf.model.Statement ;
@@ -22,15 +23,13 @@ import com.hp.hpl.jena.graph.BulkUpdateHandler ;
 import com.hp.hpl.jena.graph.Node ;
 import com.hp.hpl.jena.graph.Triple ;
 import com.hp.hpl.jena.graph.TripleMatch ;
-import com.hp.hpl.jena.graph.query.QueryHandler ;
-import com.hp.hpl.jena.graph.query.SimpleQueryHandler ;
 import com.hp.hpl.jena.shared.JenaException ;
 import com.hp.hpl.jena.shared.PrefixMapping ;
 import com.hp.hpl.jena.sparql.core.DatasetPrefixStorage ;
 import com.hp.hpl.jena.util.iterator.ExtendedIterator ;
 import com.hp.hpl.jena.util.iterator.NiceIterator ;
-
-public class GraphRepository extends com.hp.hpl.jena.sparql.graph.GraphBase2
+//com.hp.hpl.jena.sparql.graph.GraphBase2
+public class GraphRepository extends GraphBase
 {
     private static final Logger LOG = LoggerFactory.getLogger(GraphRepository.class);
     
@@ -191,12 +190,12 @@ public class GraphRepository extends com.hp.hpl.jena.sparql.graph.GraphBase2
         DatasetPrefixStorage dps = new JenaSesameDatasetPrefixStorage(connection) ;
         return dps.getPrefixMapping() ;
     }
-
-    @Override
-    public QueryHandler queryHandler()
-    {
-        return new SimpleQueryHandler(this) ;
-    }
+//
+//    @Override
+//    public QueryHandler queryHandler()
+//    {
+//        return new SimpleQueryHandler(this) ;
+//    }
 }
 
 /*
