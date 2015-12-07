@@ -173,6 +173,8 @@ public class GraphRepository extends GraphBase
     @Override
     public void close()
     {
+        /* We need that the close method does not automatically close the underlying repository... */
+        /*
         try
         {
             connection.close() ;
@@ -181,6 +183,7 @@ public class GraphRepository extends GraphBase
             ex.printStackTrace(System.err) ;
             throw new JenaException(ex) ;
         }
+        */
         super.close() ;
     }
 

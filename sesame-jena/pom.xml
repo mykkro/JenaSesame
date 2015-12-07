@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.github.ansell.jenasesame</groupId>
 		<artifactId>jena-sesame-parent</artifactId>
-		<version>0.2-SNAPSHOT</version>
+		<version>0.3-SNAPSHOT</version>
 	</parent>
 	<artifactId>sesame-jena</artifactId>
 	<name>JenaSesame :: OpenRDF Sesame access to Jena Models</name>

@@ -1,7 +1,11 @@
 ==== JenaSesame
 
 This package aims to provide a stable, long-term bridge between the two systems.
- 
+
+== Changes
+
+The close method in GraphRepository does not automatically close the underlying connection.
+
 == Documentation
 
 http://openjena.org/wiki/JenaSesame
